@@ -1,0 +1,14 @@
+---
+- name: upgrade the distro
+  apt: update_cache=yes upgrade=yes cache_valid_time=3600
+
+- name: install common packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - vim
+    - curl
+    - gnupg
+    - rsync
+    - wget
+    - ack-grep
+    - python-pycurl

@@ -1,0 +1,8 @@
+---
+- name: Install HHVM
+  hosts: hhvm-server
+
+  roles:
+    - common
+    - hhvm
+    - nginx
