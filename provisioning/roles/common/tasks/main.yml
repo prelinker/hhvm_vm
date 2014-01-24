@@ -1,4 +1,7 @@
 ---
+- name: use french debian mirror
+  lineinfile: dest=/etc/apt/sources.list regexp='^(.*)uk\.(.*)' line='\1fr.\2'
+
 - name: upgrade the distro
   apt: update_cache=yes upgrade=yes cache_valid_time=3600
 
